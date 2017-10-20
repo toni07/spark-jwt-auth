@@ -1,7 +1,7 @@
 package Validation;
 
 import DataAccess.IUserRepository;
-import RedisProvider.IRedis;
+import RedisProvider.IDatabase;
 import Util.Constant;
 import Util.ITimeProvider;
 import com.google.inject.Inject;
@@ -13,12 +13,12 @@ import io.jsonwebtoken.Jwts;
 public class TokenValidator implements ITokenValidator {
 
 
-    private IRedis redis;
+    private IDatabase redis;
     private IUserRepository IUserRepository;
     private ITimeProvider timeProvider;
 
     @Inject
-    public TokenValidator(IRedis redis, IUserRepository IUserRepository, ITimeProvider timeProvider) {
+    public TokenValidator(IDatabase redis, IUserRepository IUserRepository, ITimeProvider timeProvider) {
 
         this.redis = redis;
 

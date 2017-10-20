@@ -3,7 +3,7 @@ package RedisProvider;
 /**
  * Created by previousdeveloper on 14.09.2015.
  */
-public interface IRedis {
+public interface IDatabase {
 
     String set(String key, String value);
 

@@ -1,7 +1,7 @@
 package DataAccess;
 
 import Model.UserModel;
-import RedisProvider.IRedis;
+import RedisProvider.IDatabase;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
 
@@ -10,12 +10,12 @@ import com.google.inject.Inject;
  */
 public class UserRepositoryImpl implements IUserRepository {
 
-    private IRedis redis;
+    private IDatabase redis;
     private Gson gson;
     private UserModel userModel = null;
 
     @Inject
-    public UserRepositoryImpl(IRedis redis) {
+    public UserRepositoryImpl(IDatabase redis) {
         this.redis = redis;
         gson = new Gson();
     }

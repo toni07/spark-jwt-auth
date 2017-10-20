@@ -35,6 +35,7 @@ public class AuthController {
         before("/protected/*", (request, response) -> {
 
             String xApiToken = request.headers("X-API-TOKEN");
+            System.out.println("getting xApiToken: " + xApiToken);
 
 
             if (xApiToken != null) {

@@ -4,8 +4,8 @@ import DataAccess.ISignupRepository;
 import DataAccess.SignupRepositoryImpl;
 import DataAccess.IUserRepository;
 import DataAccess.UserRepositoryImpl;
-import RedisProvider.IRedis;
-import RedisProvider.RedisImpl;
+import RedisProvider.IDatabase;
+import RedisProvider.DatabaseImpl;
 import Service.IJwtTokenService;
 import Service.JwtTokenServiceImpl;
 import Util.TimeProviderImpl;
@@ -28,7 +28,7 @@ public   class  AppModule extends AbstractModule {
         bind(IKeyGenerator.class).to(IKeyGeneratorImpl.class).in(Singleton.class);
         bind(IJwtTokenService.class).to(JwtTokenServiceImpl.class).in(Singleton.class);
         bind(ITokenValidator.class).to(TokenValidator.class).in(Singleton.class);
-        bind(IRedis.class).to(RedisImpl.class);
+        bind(IDatabase.class).to(DatabaseImpl.class);
         bind(ISignupRepository.class).to(SignupRepositoryImpl.class).asEagerSingleton();
         bind(IUserRepository.class).to(UserRepositoryImpl.class).asEagerSingleton();
     }

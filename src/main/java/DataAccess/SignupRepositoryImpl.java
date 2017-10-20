@@ -1,7 +1,7 @@
 package DataAccess;
 
 import Model.UserModel;
-import RedisProvider.IRedis;
+import RedisProvider.IDatabase;
 import Util.JsonTransformer;
 import com.google.inject.Inject;
 
@@ -10,10 +10,10 @@ import com.google.inject.Inject;
  */
 public class SignupRepositoryImpl implements ISignupRepository {
 
-    private IRedis redis;
+    private IDatabase redis;
 
     @Inject
-    public SignupRepositoryImpl(IRedis redis) {
+    public SignupRepositoryImpl(IDatabase redis) {
 
         this.redis = redis;
     }
